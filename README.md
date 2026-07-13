@@ -1,16 +1,48 @@
-# React + Vite
+# To Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An App allowing users to be able to write down there todos in an organized way and keep track of what needs to be done.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Installation Instructions
 
-## React Compiler
+Follow these steps to set up the project locally on your machine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+Before installing, ensure you have the following software installed:
+*   [Node.js](https://nodejs.org) (v18.0.0 or higher recommended)
+*   [Git](https://git-scm.com)
+*   [Visual Studio Code](https://visualstudio.com) (Highly recommended code editor for development)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Step-by-Step Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   ```
+
+2. **Navigate into the project directory:**
+   ```bash
+   cd your-repository-name
+   ```
+
+3. **Install the dependencies:**
+   ```bash
+   npm install
+   ```
+---
+
+## How to Run the Development Server
+
+Once the installation is complete, you can start the local development server to test the app.
+
+1. **Start the server:**
+   ```bash
+   npm run dev
+   ```
+2. **Access the application:**
+   Open your browser and navigate to the local host address provided in your terminal.
+   *   [http://localhost:5173](http://localhost:5173)
+
+---
