@@ -1,13 +1,9 @@
-export default function TodoList(){
+import TodoListItem from "./TodoListItem"
 
-    const todoList = [
-        {id: 1, title: "Do Chores"},
-        {id: 2, title: "Exerices"},
-        {id: 3, title: "Do Homework"},
-    ]
+export default function TodoList({todoList}){
     return( 
         <ul>
-        {todoList.map(todo => <li key={todo.id}>{todo.title}</li>)}
+        {todoList.map(todo => <TodoListItem key={todo.id} todo={todo}></TodoListItem>)}
         </ul>
     )
 }
