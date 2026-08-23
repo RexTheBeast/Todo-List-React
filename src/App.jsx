@@ -6,10 +6,25 @@ import TodoForm from './TodoForm'
 function App() {
   const [todoList, setTodoList] = useState([]);
 
+  function completeTodo(id){
+    const updatedTodos = todoList.map(todo => {
+      if (todo.id === id) {
+        return{
+          ...todo,
+          isCompleted: true
+        };
+      }
+      return todo;
+    });
+    setTodoList(updatedTodos);
+  }
+
   function addTodo(todoTitle){
+
     const newTodo = {
       id: Date.now(),
-      title: todoTitle
+      title: todoTitle,
+      isCompleted: false
     };
 
     setTodoList(previous => [newTodo, ...previous]);
@@ -19,7 +34,7 @@ function App() {
     <div>
       <h1>My Todos</h1>
       <TodoForm onAddTodo={addTodo}></TodoForm>
-      <TodoList todoList={todoList}></TodoList>
+      <TodoList todoList={todoList} onCompleteTodo={completeTodo}></TodoList>
     </div>
   )
 }
