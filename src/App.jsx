@@ -6,6 +6,16 @@ import TodoForm from './features/TodoForm';
 function App() {
   const [todoList, setTodoList] = useState([]);
 
+  const updateTodo = (editedTodo) => {
+    const updatedTodos = todoList.map((todo) => {
+      if(todo.id ===editedTodo.id){
+        return {...editedTodo};
+      }
+      return todo;
+    });
+    setTodoList(updatedTodos)
+  }
+
   function completeTodo(id){
     const updatedTodos = todoList.map(todo => {
       if (todo.id === id) {
@@ -34,7 +44,13 @@ function App() {
     <div>
       <h1>My Todos</h1>
       <TodoForm onAddTodo={addTodo}></TodoForm>
-      <TodoList todoList={todoList} onCompleteTodo={completeTodo}></TodoList>
+      <TodoList 
+        todoList={todoList} 
+        onCompleteTodo={completeTodo}
+        onAddTodo = {addTodo}
+        onUpdateTodo = {updateTodo}
+      >
+      </TodoList>
     </div>
   )
 }
