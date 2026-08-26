@@ -40,7 +40,7 @@ function TodoListItem({todo, onCompleteTodo, onUpdateTodo}){
                             <TextInputWithLabel
                                 elementId={`edit-${todo.id}`}
                                 value={workingTitle}
-                                lableText="Edit Todo"
+                                labelText="Edit Todo"
                                 onChange={handleEdit}
                                 ref={null}
                             >
@@ -63,7 +63,7 @@ function TodoListItem({todo, onCompleteTodo, onUpdateTodo}){
                                 checked={todo.isCompleted} 
                                 onChange={() => onCompleteTodo(todo.id)}
                             />
-                            <span onClick={() => startEditing(true)}>
+                            <span onClick={startEditing}>
                             {todo.title}
                             </span>
                         </>

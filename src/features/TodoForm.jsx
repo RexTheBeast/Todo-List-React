@@ -11,7 +11,7 @@ function TodoForm({onAddTodo}){
     const handleAddTodo = (event) =>{
         event.preventDefault();
 
-       if (workingTodoTitle.trim() === "") {
+       if (!isValidTodoTitle(workingTodoTitle)) {
         return;
        }
 
