@@ -5,29 +5,27 @@ import { isValidTodoTitle } from '../utils/todoValidation'
 
 function TodoForm({onAddTodo}){
 
-    const [workingTodoTitle, setWorkingTodoTite] = useState("");
+    const [workingTodoTitle, setWorkingTodoTitle] = useState("");
     const inputRef = useRef();
 
     const handleAddTodo = (event) =>{
         event.preventDefault();
 
-       if (!isValidTodoTitle(workingTodoTitle)) {
-        return;
-       }
+       if (!isValidTodoTitle(workingTodoTitle)) return;
 
        onAddTodo(workingTodoTitle);
-       setWorkingTodoTite("");
+       setWorkingTodoTitle("");
        inputRef.current?.focus();
     };
 
     return (
         <form onSubmit={handleAddTodo}>
             <TextInputWithLabel
-                lableText="Todo"
+                labelText="Todo"
                 elementId="todoTitle"
                 ref= {inputRef}
                 value= {workingTodoTitle}
-                onChange={(e) => setWorkingTodoTite(e.target.value)}
+                onChange={(e) => setWorkingTodoTitle(e.target.value)}
             >
             </TextInputWithLabel>
             <button type="submit" disabled={!isValidTodoTitle(workingTodoTitle)}>Add Todo</button>

@@ -1,6 +1,6 @@
+import { useEditableTitle } from "../../hooks/useEditableTitle";
 import TextInputWithLabel from "../../shared/TextInputWithLabel";
 import { isValidTodoTitle } from "../../utils/todoValidation";
-import { useEditableTitle } from "../../hooks/useEditableTitle";
 
 function TodoListItem({todo, onCompleteTodo, onUpdateTodo}){
     const{
@@ -16,6 +16,8 @@ function TodoListItem({todo, onCompleteTodo, onUpdateTodo}){
         if(!isEditing) return;
 
         event.preventDefault();
+
+        if(!isValidTodoTitle(workingTitle)) return;
 
         const finalTitle = finishEdit();
 
@@ -58,11 +60,14 @@ function TodoListItem({todo, onCompleteTodo, onUpdateTodo}){
                         </>
                     )  : (
                         <>
-                            <input 
-                                type="checkbox"
-                                checked={todo.isCompleted} 
-                                onChange={() => onCompleteTodo(todo.id)}
-                            />
+                            <label>
+                                <input 
+                                    type="checkbox"
+                                    id={`checkbox${todo.id}`}
+                                    checked={todo.isCompleted} 
+                                    onChange={() => onCompleteTodo(todo.id)}
+                                />
+                            </label>
                             <span onClick={startEditing}>
                             {todo.title}
                             </span>
